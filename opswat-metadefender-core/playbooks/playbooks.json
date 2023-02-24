@@ -1,0 +1,363 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "@type": "WorkflowCollection",
+      "name": "Sample - OPSWAT MetaDefender Core - 1.0.0",
+      "description": "Sample playbooks for \"OPSWAT MetaDefender Core\" connector. If you are planning to use any of the sample playbooks in your environment, ensure that you clone those playbooks and move them to a different collection, since the sample playbook collection gets deleted during connector upgrade and delete.",
+      "visible": true,
+      "image": "data:png;base64,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",
+      "uuid": "6a52b7f6-2e7a-4f4f-82cc-06b5414197bf",
+      "id": 173,
+      "deletedAt": null,
+      "importedBy": [],
+      "recordTags": [
+        "Opswat",
+        "opswat-metadefender-core"
+      ],
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Download Sanitized Files",
+          "aliasName": null,
+          "tag": "#OPSWAT MetaDefender Core",
+          "description": "Retrieves sanitized file based on the Data ID from OPSWAT MetaDefender Core.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": null,
+          "collection": "/api/3/workflow_collections/6a52b7f6-2e7a-4f4f-82cc-06b5414197bf",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/a51ce9af-4c48-4135-a395-6e7ff7703c14",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Download Sanitized Files",
+              "description": null,
+              "arguments": {
+                "name": "OPSWAT MetaDefender Core",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "opswat-metadefender-core",
+                "operation": "download_sanitized_files",
+                "operationTitle": "Download Sanitized Files"
+              },
+              "status": null,
+              "top": "120",
+              "left": "188",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "422c0250-bc60-4dfe-a148-bbc81f132599"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "52bfe476-9586-4714-9f37-9f3ac277261d",
+                "title": "OPSWAT MetaDefender Core: Download Sanitized Files",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "20",
+              "left": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "a51ce9af-4c48-4135-a395-6e7ff7703c14"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start-> Download Sanitized Files",
+              "targetStep": "/api/3/workflow_steps/422c0250-bc60-4dfe-a148-bbc81f132599",
+              "sourceStep": "/api/3/workflow_steps/a51ce9af-4c48-4135-a395-6e7ff7703c14",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "77618a56-ade1-4339-87ea-a109fee7bdb9"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "01a67c36-8efe-484a-905b-ebf4eaab485a",
+          "id": 1921,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Opswat",
+            "opswat-metadefender-core"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Submit File",
+          "aliasName": null,
+          "tag": "#OPSWAT MetaDefender Core",
+          "description": "Submit the file to be scanned, You can choose among Synchronous Mode or Asynchronous Mode. Each submission request is tracked by data id.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1677233195,
+          "collection": "/api/3/workflow_collections/6a52b7f6-2e7a-4f4f-82cc-06b5414197bf",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/13e2972e-5174-454c-81a1-5b820cb6f1c8",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Save response",
+              "description": null,
+              "arguments": {
+                "save_result": "{{vars.result}}"
+              },
+              "status": null,
+              "top": "400",
+              "left": "1040",
+              "stepType": "/api/3/workflow_step_types/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+              "group": null,
+              "uuid": "0a6178d7-7c4b-4638-9ca7-412149a2843d"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "dbec5327-ec49-4819-b49c-9b445768f976",
+                "resources": [
+                  "attachments"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "displayConditions": {
+                  "attachments": {
+                    "sort": [],
+                    "limit": 30,
+                    "logic": "AND",
+                    "filters": []
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": false,
+                "singleRecordExecution": true
+              },
+              "status": null,
+              "top": "20",
+              "left": "40",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "13e2972e-5174-454c-81a1-5b820cb6f1c8"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Save attachment details",
+              "description": null,
+              "arguments": {
+                "file_iri": "{{vars.input.records[0].file['@id']}}",
+                "attachment_id": "{{vars.input.records[0]['@id']}}"
+              },
+              "status": null,
+              "top": "120",
+              "left": "360",
+              "stepType": "/api/3/workflow_step_types/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+              "group": null,
+              "uuid": "58da1b65-8b80-4e9a-a307-f50e84fe68d6"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Submit File",
+              "description": null,
+              "arguments": {
+                "name": "OPSWAT MetaDefender Core",
+                "config": "893ce499-2297-4ac5-a922-70481f44169d",
+                "params": {
+                  "rule": "rule",
+                  "value": "{{vars.file_iri}}",
+                  "filename": "filename",
+                  "input_type": "File IRI",
+                  "submit_mode": "Asynchronous Mode",
+                  "submit_type": "Through Attachments",
+                  "callback_url": "http://localhost:8080/callback",
+                  "sanitized_url": "http://localhost:8080/sanitized",
+                  "other_attributes": "{\"other\": \"attributes\"}"
+                },
+                "version": "1.0.0",
+                "connector": "opswat-metadefender-core",
+                "operation": "submit_file",
+                "operationTitle": "Submit File",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "240",
+              "left": "660",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "c3cfd643-b74a-45f0-a0e6-55a3c8bac837"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Save attachment details",
+              "targetStep": "/api/3/workflow_steps/58da1b65-8b80-4e9a-a307-f50e84fe68d6",
+              "sourceStep": "/api/3/workflow_steps/13e2972e-5174-454c-81a1-5b820cb6f1c8",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "0c1f2973-d66e-4585-9997-c55ac7053d3c"
+            },
+            {
+              "@type": "WorkflowRoute",
+              "name": "Save attachment details -> Submit Filef",
+              "targetStep": "/api/3/workflow_steps/c3cfd643-b74a-45f0-a0e6-55a3c8bac837",
+              "sourceStep": "/api/3/workflow_steps/58da1b65-8b80-4e9a-a307-f50e84fe68d6",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "9bef9a68-9686-4023-9dff-30c42f60dbff"
+            },
+            {
+              "@type": "WorkflowRoute",
+              "name": "Submit File -> Save response",
+              "targetStep": "/api/3/workflow_steps/0a6178d7-7c4b-4638-9ca7-412149a2843d",
+              "sourceStep": "/api/3/workflow_steps/c3cfd643-b74a-45f0-a0e6-55a3c8bac837",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "f402fd78-b33e-4496-8f5e-2de63d41c1ef"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "529f5fc9-d848-4b95-9bc0-cc5183aaa5ca",
+          "id": 1919,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Opswat",
+            "opswat-metadefender-core"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Hashcode Reputation",
+          "aliasName": null,
+          "tag": "#OPSWAT MetaDefender Core",
+          "description": "Retrieves analysis result by hashcode from the OPSWAT MetaDefender Core.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": null,
+          "collection": "/api/3/workflow_collections/6a52b7f6-2e7a-4f4f-82cc-06b5414197bf",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/a0ee8b8a-6a96-4535-bfb4-02a19a55e8cc",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Hashcode Reputation",
+              "description": null,
+              "arguments": {
+                "name": "OPSWAT MetaDefender Core",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "opswat-metadefender-core",
+                "operation": "get_hashcode_reputation",
+                "operationTitle": "Get Hashcode Reputation"
+              },
+              "status": null,
+              "top": "120",
+              "left": "188",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "14672d5f-8f55-4222-8b48-765cc7638ab7"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "3e55c7ad-e3bd-452a-9b3e-5ce848aece39",
+                "title": "OPSWAT MetaDefender Core: Get Hashcode Reputation",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "20",
+              "left": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "a0ee8b8a-6a96-4535-bfb4-02a19a55e8cc"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start-> Get Hashcode Reputation",
+              "targetStep": "/api/3/workflow_steps/14672d5f-8f55-4222-8b48-765cc7638ab7",
+              "sourceStep": "/api/3/workflow_steps/a0ee8b8a-6a96-4535-bfb4-02a19a55e8cc",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "62ead17f-3c0c-4b66-9be8-69ea0f0b18a1"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "ff55cfcd-234f-4014-b287-6c7ed40c31a1",
+          "id": 1920,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Opswat",
+            "opswat-metadefender-core"
+          ]
+        }
+      ]
+    }
+  ],
+  "exported_tags": [
+    "Opswat",
+    "opswat-metadefender-core"
+  ]
+}

@@ -1,0 +1,873 @@
+{
+  "name": "opswat-metadefender-core",
+  "label": "OPSWAT MetaDefender Core",
+  "description": "OPSWAT MetaDefender Core prevents malicious file uploads on web applications that bypass sandboxes and other detection-based security solutions. This connector facilitates operations to Submit File, Get Hashcode Reputation, Download Sanitized Files.",
+  "category": "Threat Intelligence",
+  "version": "1.0.0",
+  "publisher": "Fortinet",
+  "cs_approved": false,
+  "cs_compatible": true,
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "help_online": "",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "name": "server_url",
+        "type": "text",
+        "description": "URL of the OPSWAT MetaDefender Core server to which you will connect and perform the automated operations.",
+        "placeholder": "Please enter the server URL",
+        "required": true,
+        "editable": true,
+        "visible": true
+      },
+       {
+        "title": "Username",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "text",
+        "name": "username",
+        "description": "Username used to access the OPSWAT MetaDefender Core server to which you will connect and perform the automated operations."
+      },
+      {
+        "title": "Password",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "password",
+        "name": "password",
+        "description": "Password used to access the OPSWAT MetaDefender Core server to which you will connect and perform the automated operations."
+      },
+      {
+        "title": "Verify SSL",
+        "name": "verify_ssl",
+        "type": "checkbox",
+        "description": "Specifies whether the SSL certificate for the server is to be verified. \nBy default, this option is set to True.",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "value": true
+      }
+    ]
+  },
+  "operations": [
+    {
+      "operation": "submit_file",
+      "title": "Submit File",
+      "description": "Submit the file to be scanned, You can specify the 'URL of File' or select file from 'Attachments'. You can also choose among 'Synchronous Mode' or 'Asynchronous Mode'. Each submission request is tracked by data id.",
+      "category": "investigation",
+      "annotation": "submit_file",
+      "conditional_output_schema": [
+        {
+          "condition": "{{submit_mode === 'Synchronous Mode'}}",
+          "output_schema": {
+           "data_id": "",
+           "dlp_info": {
+            "certainty": "",
+            "errors": {
+             "redact": ""
+            },
+            "filename": "",
+            "hits": {
+             "ccn": {
+              "display_name": "",
+              "hits": [
+               {
+                "after": "",
+                "before": "",
+                "certainty": "",
+                "certainty_score": "",
+                "hit": "",
+                "location": "",
+                "severity": "",
+                "tryRedact": ""
+               }
+              ]
+             }
+            },
+            "metadata_removal": {
+             "result": ""
+            },
+            "redact": {
+             "result": ""
+            },
+            "severity": "",
+            "verdict": "",
+            "watermark": {
+             "result": ""
+            }
+           },
+           "download_info": {
+            "error_detail": "",
+            "progress": "",
+            "status": "",
+            "url": ""
+           },
+           "file_info": {
+            "display_name": "",
+            "file_size": "",
+            "file_type": "",
+            "file_type_description": "",
+            "md5": "",
+            "sha1": "",
+            "sha256": "",
+            "type_category": [
+             ""
+            ],
+            "receive_data_timestamp": "",
+            "upload_time": "",
+            "upload_timestamp": ""
+           },
+           "process_info": {
+            "blocked_reason": "",
+            "blocked_reasons": [
+             ""
+            ],
+            "file_type_skipped_scan": "",
+            "hash_time": "",
+            "outdated_data": [],
+            "processing_time": "",
+            "processing_time_details": {
+             "av_scan_time": "",
+             "cdr_time": "",
+             "dlp_time": "",
+             "extraction_time": "",
+             "filetype_time": "",
+             "others_time": "",
+             "vul_time": "",
+             "yara_time": ""
+            },
+            "profile": "",
+            "progress_percentage": "",
+            "queue_time": "",
+            "result": "",
+            "user_agent": "",
+            "username": "",
+            "verdicts": [],
+            "post_processing": {
+             "actions_failed": "",
+             "actions_ran": "",
+             "converted_destination": "",
+             "converted_to": "",
+             "copy_move_destination": "",
+             "sanitization_details": {
+              "description": "",
+              "details": [
+               {
+                "action": "",
+                "count": "",
+                "object_details": [],
+                "object_name": ""
+               }
+              ],
+              "sanitized_file_info": {
+               "file_size": "",
+               "sha256": ""
+              }
+             }
+            }
+           },
+           "scan_results": {
+            "data_id": "",
+            "progress_percentage": "",
+            "scan_all_result_a": "",
+            "scan_all_result_i": "",
+            "start_time": "",
+            "total_avs": "",
+            "total_time": "",
+            "scan_details": {
+             "ClamAV": {
+              "def_time": "",
+              "eng_id": "",
+              "location": "",
+              "scan_result_i": "",
+              "scan_time": "",
+              "threat_found": "",
+              "wait_time": ""
+             }
+            }
+           },
+           "vulnerability_info": {
+            "result": {
+             "code": "",
+             "hash": "",
+             "method": "",
+             "timestamp": "",
+             "timing": "",
+             "detected_product": {
+              "has_kb": "",
+              "has_vulnerability": "",
+              "is_current": "",
+              "product": {
+               "id": "",
+               "name": ""
+              },
+              "remediation_link": "",
+              "severity": "",
+              "sig_name": "",
+              "signature": "",
+              "vendor": {
+               "id": "",
+               "name": ""
+              },
+              "version": "",
+              "version_data": {
+               "count_behind": "",
+               "feed_id": "",
+               "version": ""
+              },
+              "vulnerabilites": [
+               {
+                "description": "",
+                "details": {
+                 "cpe": "",
+                 "cve": "",
+                 "cvss": {
+                  "access-complexity": "",
+                  "access-vector": "",
+                  "authentication": "",
+                  "availability-impact": "",
+                  "confidentiality-impact": "",
+                  "generated-on-epoch": "",
+                  "integrity-impact": "",
+                  "score": "",
+                  "source": ""
+                 },
+                 "cwe": "",
+                 "last_modified_epoch": "",
+                 "published-epoch": "",
+                 "references": []
+                },
+                "severity": "",
+                "severity_index": "",
+                "static_id": ""
+               }
+              ]
+             }
+            },
+            "verdict": ""
+           },
+           "yara": {
+            "hits": {},
+            "verdict": ""
+           }
+          }
+        },
+        {
+          "condition": "{{submit_mode === 'Asynchronous Mode'}}",
+          "output_schema": {
+            "data_id": ""
+          }
+        }
+      ],
+      "enabled": true,
+      "parameters": [
+         {
+          "title": "Submission Type",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "options": [
+            "File Download URL",
+            "Through Attachments"
+          ],
+          "name": "submit_type",
+          "value": "Through Attachments",
+          "tooltip": "Select the type of submission using which you want to submit the file",
+          "description": "Select the type of submission using which you want to submit the file. You can choose among the following options: 'File Download URL' or 'Through Attachments' (Default).",
+          "onchange": {
+            "Through Attachments": [{
+              "title": "Submission Mode",
+              "required": true,
+              "editable": true,
+              "visible": true,
+              "type": "select",
+              "options": [
+                "Asynchronous Mode",
+                "Synchronous Mode"
+              ],
+              "name": "submit_mode",
+              "value": "Synchronous Mode",
+              "tooltip": "Select one of the modes of submission using which you want to submit the file",
+              "description": "Select one of the modes of submission using which you want to submit the file. You can choose among the following options: 'Synchronous mode' (Default) or 'Asynchronous mode'.",
+              "onchange": {
+                "Synchronous Mode": [
+                  {
+                    "name": "input_type",
+                    "title": "Type",
+                    "type": "select",
+                    "options": [
+                      "Attachment ID",
+                      "File IRI"
+                    ],
+                    "editable": true,
+                    "visible": true,
+                    "required": true,
+                    "value": "",
+                    "description": "Choose between Attachment ID or a File IRI."
+                  },
+                  {
+                    "name": "value",
+                    "title": "Reference ID",
+                    "type": "text",
+                    "editable": true,
+                    "visible": true,
+                    "required": true,
+                    "description": "Attachment ID that is used to access the attachment metadata from the FortiSOAR™ Attachments module.\nIn the playbook, if you select 'Attachment ID', this defaults to the {{vars.attachment_id}} value or if you select 'File IRI', then this defaults to the {{vars.file_iri}} value."
+                  },
+                  {
+                    "title": "File Name",
+                    "name": "filename",
+                    "type": "text",
+                    "tooltip": "Specify the name of the submitted file.",
+                    "description": "(Optional) Specify the name of the submitted file. Specified name is displayed in OPSWAT MetaDefender Core UI",
+                    "required": false,
+                    "editable": true,
+                    "visible": true
+                  },
+                  {
+                    "title": "Rule",
+                    "name": "rule",
+                    "type": "text",
+                    "tooltip": "Specify the rule for the analysis, if no header given the default rule will be selected.",
+                    "description": "(Optional) Specify the rule for the analysis, if no header given the default rule will be selected.",
+                    "required": false,
+                    "editable": true,
+                    "visible": true
+                  },
+                  {
+                    "title": "Other Attributes",
+                    "name": "other_attributes",
+                    "type": "json",
+                    "tooltip": "Specify other attributes that you would like to include like metadata, engines-metadata etc.",
+                    "description": "(Optional) Specify other attributes that you would like to include like metadata, engines-metadata etc.",
+                    "required": false,
+                    "editable": true,
+                    "visible": true
+                  }
+                ],
+                "Asynchronous Mode": [
+                  {
+                    "name": "input_type",
+                    "title": "Type",
+                    "type": "select",
+                    "options": [
+                      "Attachment ID",
+                      "File IRI"
+                    ],
+                    "editable": true,
+                    "visible": true,
+                    "required": true,
+                    "value": "",
+                    "description": "Choose between Attachment ID or a File IRI."
+                  },
+                  {
+                    "name": "value",
+                    "title": "Reference ID",
+                    "type": "text",
+                    "editable": true,
+                    "visible": true,
+                    "required": true,
+                    "value": "",
+                    "description": "Attachment ID that is used to access the attachment metadata from the FortiSOAR™ Attachments module.\nIn the playbook, if you select 'Attachment ID', this defaults to the {{vars.attachment_id}} value or if you select 'File IRI', then this defaults to the {{vars.file_iri}} value."
+                  },
+                  {
+                    "title": "File Name",
+                    "name": "filename",
+                    "type": "text",
+                    "tooltip": "Specify the name of the submitted file.",
+                    "description": "(Optional) Specify the name of the submitted file. Specified name is displayed in OPSWAT MetaDefender Core UI",
+                    "required": false,
+                    "editable": true,
+                    "visible": true
+                  },
+                  {
+                    "title": "Rule",
+                    "name": "rule",
+                    "type": "text",
+                    "tooltip": "Specify the rule for the analysis, if no header given the default rule will be selected.",
+                    "description": "(Optional) Specify the rule for the analysis, if no header given the default rule will be selected.",
+                    "required": false,
+                    "editable": true,
+                    "visible": true
+                  },
+                  {
+                    "title": "Other Attributes",
+                    "name": "other_attributes",
+                    "type": "json",
+                    "tooltip": "Specify other attributes that you would like to include like metadata, engines-metadata etc.",
+                    "description": "(Optional) Specify other attributes that you would like to include like metadata, engines-metadata etc.",
+                    "required": false,
+                    "editable": true,
+                    "visible": true
+                  },
+                  {
+                    "title": "Callback URL",
+                    "required": false,
+                    "editable": true,
+                    "visible": true,
+                    "type": "text",
+                    "name": "callback_url",
+                    "description": "Specify the Client's URL where MetaDefender Core will notify scan result back to whenever scan is finished.",
+                    "tooltip": "(Optional) Specify the Client's URL where MetaDefender Core will notify scan result back to whenever scan is finished.",
+                    "placeholder": "<protocol://><ip | domain>:<port></path>"
+                  },
+                  {
+                    "title": "Sanitized URL",
+                    "required": false,
+                    "editable": true,
+                    "visible": true,
+                    "type": "text",
+                    "name": "sanitized_url",
+                    "description": "Client's URL where MetaDefender Core will send the sanitized file as the body of a POST request back to whenever scan is finished",
+                    "tooltip": "(Optional) Client's URL where MetaDefender Core will send the sanitized file as the body of a POST request back to whenever scan is finished",
+                    "placeholder": "<protocol://><ip | domain>:<port></path>"
+                  }
+                ]
+              }
+            }],
+            "File Download URL": [{
+              "title": "Submission Mode",
+              "required": true,
+              "editable": true,
+              "visible": true,
+              "type": "select",
+              "options": [
+                "Asynchronous Mode",
+                "Synchronous Mode"
+              ],
+              "name": "submit_mode",
+              "value": "Synchronous Mode",
+              "tooltip": "Select one of the modes of submission using which you want to submit the file",
+              "description": "Select one of the modes of submission using which you want to submit the file. You can choose among the following options: 'Synchronous mode' (Default) or 'Asynchronous mode'.",
+              "onchange": {
+                "Synchronous Mode": [
+                  {
+                    "title": "Download From",
+                    "required": true,
+                    "editable": true,
+                    "visible": true,
+                    "type": "text",
+                    "name": "download_from",
+                    "description": "Specify the path from which you want to retrieve the file for submission.",
+                    "tooltip": "Specify the path from which you want to retrieve the file for submission.",
+                    "placeholder": "<protocol://><ip | domain>:<port></path>"
+                  },
+                  {
+                    "title": "File Name",
+                    "name": "filename",
+                    "type": "text",
+                    "tooltip": "Specify the name of the submitted file.",
+                    "description": "(Optional) Specify the name of the submitted file. Specified name is displayed in OPSWAT MetaDefender Core UI",
+                    "required": false,
+                    "editable": true,
+                    "visible": true
+                  },
+                  {
+                    "title": "Rule",
+                    "name": "rule",
+                    "type": "text",
+                    "tooltip": "Specify the rule for the analysis, if no header given the default rule will be selected.",
+                    "description": "(Optional) Specify the rule for the analysis, if no header given the default rule will be selected.",
+                    "required": false,
+                    "editable": true,
+                    "visible": true
+                  },
+                  {
+                    "title": "Other Attributes",
+                    "name": "other_attributes",
+                    "type": "json",
+                    "tooltip": "Specify other attributes that you would like to include like metadata, engines-metadata etc.",
+                    "description": "(Optional) Specify other attributes that you would like to include like metadata, engines-metadata etc.",
+                    "required": false,
+                    "editable": true,
+                    "visible": true
+                  }
+                ],
+                "Asynchronous Mode": [
+                  {
+                    "title": "Download From",
+                    "required": true,
+                    "editable": true,
+                    "visible": true,
+                    "type": "text",
+                    "name": "download_from",
+                    "description": "Specify the path from which you want to retrieve the file for submission.",
+                    "tooltip": "Specify the path from which you want to retrieve the file for submission.",
+                    "placeholder": "<protocol://><ip | domain>:<port></path>"
+                  },
+                  {
+                    "title": "File Name",
+                    "name": "filename",
+                    "type": "text",
+                    "tooltip": "Specify the name of the submitted file.",
+                    "description": "(Optional) Specify the name of the submitted file. Specified name is displayed in OPSWAT MetaDefender Core UI",
+                    "required": false,
+                    "editable": true,
+                    "visible": true
+                  },
+                  {
+                    "title": "Rule",
+                    "name": "rule",
+                    "type": "text",
+                    "tooltip": "Specify the rule for the analysis, if no header given the default rule will be selected.",
+                    "description": "(Optional) Specify the rule for the analysis, if no header given the default rule will be selected.",
+                    "required": false,
+                    "editable": true,
+                    "visible": true
+                  },
+                  {
+                    "title": "Other Attributes",
+                    "name": "other_attributes",
+                    "type": "json",
+                    "tooltip": "Specify other attributes that you would like to include like metadata, engines-metadata etc.",
+                    "description": "(Optional) Specify other attributes that you would like to include like metadata, engines-metadata etc.",
+                    "required": false,
+                    "editable": true,
+                    "visible": true
+                  },
+                  {
+                    "title": "Callback URL",
+                    "required": false,
+                    "editable": true,
+                    "visible": true,
+                    "type": "text",
+                    "name": "callback_url",
+                    "description": "Specify the Client's URL where MetaDefender Core will notify scan result back to whenever scan is finished.",
+                    "tooltip": "(Optional) Specify the Client's URL where MetaDefender Core will notify scan result back to whenever scan is finished.",
+                    "placeholder": "<protocol://><ip | domain>:<port></path>"
+                  },
+                  {
+                    "title": "Sanitized URL",
+                    "required": false,
+                    "editable": true,
+                    "visible": true,
+                    "type": "text",
+                    "name": "sanitized_url",
+                    "description": "Client's URL where MetaDefender Core will send the sanitized file as the body of a POST request back to whenever scan is finished",
+                    "tooltip": "(Optional) Client's URL where MetaDefender Core will send the sanitized file as the body of a POST request back to whenever scan is finished",
+                    "placeholder": "<protocol://><ip | domain>:<port></path>"
+                  }
+                ]
+              }
+            }]
+          }
+        }
+      ]
+    },
+    {
+      "operation": "get_hashcode_reputation",
+      "title": "Get Hashcode Reputation",
+      "description": "Retrieves analysis result by hashcode from the OPSWAT MetaDefender Core.",
+      "category": "investigation",
+      "annotation": "get_hashcode_reputation",
+      "output_schema": {
+       "data_id": "",
+       "dlp_info": {
+        "certainty": "",
+        "errors": {
+         "redact": ""
+        },
+        "filename": "",
+        "hits": {
+         "ccn": {
+          "display_name": "",
+          "hits": [
+           {
+            "after": "",
+            "before": "",
+            "certainty": "",
+            "certainty_score": "",
+            "hit": "",
+            "location": "",
+            "severity": "",
+            "tryRedact": ""
+           }
+          ]
+         }
+        },
+        "metadata_removal": {
+         "result": ""
+        },
+        "redact": {
+         "result": ""
+        },
+        "severity": "",
+        "verdict": "",
+        "watermark": {
+         "result": ""
+        }
+       },
+       "download_info": {
+        "error_detail": "",
+        "progress": "",
+        "status": "",
+        "url": ""
+       },
+       "file_info": {
+        "display_name": "",
+        "file_size": "",
+        "file_type": "",
+        "file_type_description": "",
+        "md5": "",
+        "sha1": "",
+        "sha256": "",
+        "type_category": [
+         ""
+        ],
+        "receive_data_timestamp": "",
+        "upload_time": "",
+        "upload_timestamp": ""
+       },
+       "process_info": {
+        "blocked_reason": "",
+        "blocked_reasons": [],
+        "file_type_skipped_scan": "",
+        "hash_time": "",
+        "outdated_data": [],
+        "processing_time": "",
+        "processing_time_details": {
+         "av_scan_time": "",
+         "cdr_time": "",
+         "dlp_time": "",
+         "extraction_time": "",
+         "filetype_time": "",
+         "others_time": "",
+         "vul_time": "",
+         "yara_time": ""
+        },
+        "profile": "",
+        "progress_percentage": "",
+        "queue_time": "",
+        "result": "",
+        "user_agent": "",
+        "username": "",
+        "verdicts": [],
+        "post_processing": {
+         "actions_failed": "",
+         "actions_ran": "",
+         "converted_destination": "",
+         "converted_to": "",
+         "copy_move_destination": "",
+         "sanitization_details": {
+          "description": "",
+          "details": [
+           {
+            "action": "",
+            "count": "",
+            "object_details": [],
+            "object_name": ""
+           },
+           {
+            "object_name": "",
+            "file_name": "",
+            "description": "",
+            "details": [
+             {
+              "action": "",
+              "count": "",
+              "object_details": [],
+              "object_name": ""
+             }
+            ],
+            "action": ""
+           }
+          ],
+          "sanitized_file_info": {
+           "file_size": "",
+           "sha256": ""
+          }
+         }
+        }
+       },
+       "scan_results": {
+        "data_id": "",
+        "progress_percentage": "",
+        "scan_all_result_a": "",
+        "scan_all_result_i": "",
+        "start_time": "",
+        "total_avs": "",
+        "total_time": "",
+        "scan_details": {
+         "ClamAV": {
+          "def_time": "",
+          "eng_id": "",
+          "location": "",
+          "scan_result_i": "",
+          "scan_time": "",
+          "threat_found": "",
+          "wait_time": ""
+         }
+        }
+       },
+       "vulnerability_info": {
+        "result": {
+         "code": "",
+         "hash": "",
+         "method": "",
+         "timestamp": "",
+         "timing": "",
+         "detected_product": {
+          "has_kb": "",
+          "has_vulnerability": "",
+          "is_current": "",
+          "product": {
+           "id": "",
+           "name": ""
+          },
+          "remediation_link": "",
+          "severity": "",
+          "sig_name": "",
+          "signature": "",
+          "vendor": {
+           "id": "",
+           "name": ""
+          },
+          "version": "",
+          "version_data": {
+           "count_behind": "",
+           "feed_id": "",
+           "version": ""
+          },
+          "vulnerabilites": [
+           {
+            "description": "",
+            "details": {
+             "cpe": "",
+             "cve": "",
+             "cvss": {
+              "access-complexity": "",
+              "access-vector": "",
+              "authentication": "",
+              "availability-impact": "",
+              "confidentiality-impact": "",
+              "generated-on-epoch": "",
+              "integrity-impact": "",
+              "score": "",
+              "source": ""
+             },
+             "cwe": "",
+             "last_modified_epoch": "",
+             "published-epoch": "",
+             "references": []
+            },
+            "severity": "",
+            "severity_index": "",
+            "static_id": ""
+           }
+          ]
+         }
+        },
+        "verdict": ""
+       },
+       "yara": {
+        "hits": {},
+        "verdict": ""
+       }
+      },
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "HashCode",
+          "name": "hashcode",
+          "type": "text",
+          "tooltip": "Specify Hash value to search. This can be md5, sha1 or sha256.",
+          "description": "Specify Hash value to search. This can be md5, sha1 or sha256.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "operation": "download_sanitized_files",
+      "title": "Download Sanitized Files",
+      "description": "Retrieves sanitized file based on the Data ID from OPSWAT MetaDefender Core.",
+      "category": "investigation",
+      "annotation": "download_sanitized_files",
+      "output_schema": {
+        "id": "",
+        "@id": "",
+        "file": {
+          "id": "",
+          "@id": "",
+          "size": "",
+          "uuid": "",
+          "@type": "",
+          "assignee": "",
+          "filename": "",
+          "metadata": [],
+          "mimeType": "",
+          "thumbnail": "",
+          "uploadDate": ""
+        },
+        "name": "",
+        "type": "",
+        "uuid": "",
+        "@type": "",
+        "tasks": [],
+        "alerts": [],
+        "assets": [],
+        "owners": [],
+        "people": [],
+        "@context": "",
+        "assignee": "",
+        "comments": [],
+        "warrooms": [],
+        "incidents": [],
+        "createDate": "",
+        "createUser": {
+          "id": "",
+          "@id": "",
+          "name": "",
+          "uuid": "",
+          "@type": "",
+          "avatar": "",
+          "userId": "",
+          "userType": "",
+          "createDate": "",
+          "createUser": "",
+          "modifyDate": "",
+          "modifyUser": ""
+        },
+        "indicators": [],
+        "modifyDate": "",
+        "modifyUser": {
+          "id": "",
+          "@id": "",
+          "name": "",
+          "uuid": "",
+          "@type": "",
+          "avatar": "",
+          "userId": "",
+          "userType": "",
+          "createDate": "",
+          "createUser": "",
+          "modifyDate": "",
+          "modifyUser": ""
+        },
+        "recordTags": [],
+        "userOwners": [],
+        "description": ""
+      },
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Data ID",
+          "name": "data_id",
+          "type": "text",
+          "tooltip": "The data ID you get from 'Submit File' action.",
+          "description": "The data ID you get from 'Submit File' action.",
+          "required": true,
+          "editable": true,
+          "visible": true
+        }
+      ]
+    }
+  ]
+}
+
+
