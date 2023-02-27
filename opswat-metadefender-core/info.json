@@ -2,7 +2,7 @@
   "name": "opswat-metadefender-core",
   "label": "OPSWAT MetaDefender Core",
   "description": "OPSWAT MetaDefender Core prevents malicious file uploads on web applications that bypass sandboxes and other detection-based security solutions. This connector facilitates operations to Submit File, Get Hashcode Reputation, Download Sanitized Files.",
-  "category": "Threat Intelligence",
+  "category": "Malware Analysis",
   "version": "1.0.0",
   "publisher": "Fortinet",
   "cs_approved": false,
@@ -272,14 +272,14 @@
           "type": "select",
           "options": [
             "File Download URL",
-            "Through Attachments"
+            "FortiSOAR File/Attachments IRI"
           ],
           "name": "submit_type",
           "value": "Through Attachments",
           "tooltip": "Select the type of submission using which you want to submit the file",
           "description": "Select the type of submission using which you want to submit the file. You can choose among the following options: 'File Download URL' or 'Through Attachments' (Default).",
           "onchange": {
-            "Through Attachments": [{
+            "FortiSOAR File/Attachments IRI": [{
               "title": "Submission Mode",
               "required": true,
               "editable": true,
@@ -311,12 +311,12 @@
                   },
                   {
                     "name": "value",
-                    "title": "Reference ID",
+                    "title": "File Attachment/IRI Reference",
                     "type": "text",
                     "editable": true,
                     "visible": true,
                     "required": true,
-                    "description": "Attachment ID that is used to access the attachment metadata from the FortiSOAR™ Attachments module.\nIn the playbook, if you select 'Attachment ID', this defaults to the {{vars.attachment_id}} value or if you select 'File IRI', then this defaults to the {{vars.file_iri}} value."
+                    "description": "File Attachment/IRI Reference that is used to access the attachment metadata from the FortiSOAR™ Attachments module.\nIn the playbook, if you select 'Attachment ID', this defaults to the {{vars.attachment_id}} value or if you select 'File IRI', then this defaults to the {{vars.file_iri}} value."
                   },
                   {
                     "title": "File Name",
@@ -366,13 +366,13 @@
                   },
                   {
                     "name": "value",
-                    "title": "Reference ID",
+                    "title": "File Attachment/IRI Reference",
                     "type": "text",
                     "editable": true,
                     "visible": true,
                     "required": true,
                     "value": "",
-                    "description": "Attachment ID that is used to access the attachment metadata from the FortiSOAR™ Attachments module.\nIn the playbook, if you select 'Attachment ID', this defaults to the {{vars.attachment_id}} value or if you select 'File IRI', then this defaults to the {{vars.file_iri}} value."
+                    "description": "File Attachment/IRI Reference that is used to access the attachment metadata from the FortiSOAR™ Attachments module.\nIn the playbook, if you select 'Attachment ID', this defaults to the {{vars.attachment_id}} value or if you select 'File IRI', then this defaults to the {{vars.file_iri}} value."
                   },
                   {
                     "title": "File Name",
