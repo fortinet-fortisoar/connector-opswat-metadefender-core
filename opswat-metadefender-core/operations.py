@@ -86,6 +86,21 @@ class Opswat:
         self.make_rest_call('/logout')
 
 
+def build_headers(params, opswat):
+    payload = {
+        "Content-Type": "application/octet-stream",
+        "apikey": opswat.token,
+        "filename": params.get('filename'),
+        "rule": urllib.parse.quote(params.get('rule') if params.get('rule') is not None else ''),
+        "callbackurl": params.get('callback_url'),
+        "sanitizedurl": params.get('sanitized_url'),
+        "downloadfrom": params.get('download_from')
+    }
+    payload.update(params.get('other_attributes'))
+    headers = check_payload(payload)
+    return headers
+
+
 def check_payload(payload):
     updated_payload = {k: v for k, v in payload.items() if v is not None and v != ''}
     return updated_payload
@@ -138,57 +153,19 @@ def submit_file(config, params):
         submit_mode = params.get('submit_mode')
         if submit_type == 'File Download URL':
             if submit_mode == 'Synchronous Mode':
-                other_attributes = params.get('other_attributes')
-                payload = {
-                    "Content-Type": "application/octet-stream",
-                    "apikey": opswat.token,
-                    "filename": params.get('filename'),
-                    "rule": urllib.parse.quote(params.get('rule')),
-                    "downloadfrom": params.get('download_from')
-                }
-                payload.update(other_attributes)
-                headers = check_payload(payload)
+                headers = build_headers(params, opswat)
                 response = opswat.make_rest_call('/file/sync', headers=headers)
             else:
-                other_attributes = params.get('other_attributes')
-                payload = {
-                    "Content-Type": "application/octet-stream",
-                    "apikey": opswat.token,
-                    "filename": params.get('filename'),
-                    "rule": urllib.parse.quote(params.get('rule')),
-                    "callbackurl": params.get('callback_url'),
-                    "sanitizedurl": params.get('sanitized_url'),
-                    "downloadfrom": params.get('download_from')
-                }
-                payload.update(other_attributes)
-                headers = check_payload(payload)
+                headers = build_headers(params, opswat)
                 response = opswat.make_rest_call('/file', headers=headers)
         else:
             if submit_mode == 'Synchronous Mode':
-                other_attributes = params.get('other_attributes')
-                payload = {
-                    "Content-Type": "application/octet-stream",
-                    "apikey": opswat.token,
-                    "filename": params.get('filename'),
-                    "rule": urllib.parse.quote(params.get('rule'))
-                }
-                payload.update(other_attributes)
-                headers = check_payload(payload)
+                headers = build_headers(params, opswat)
                 file_iri = handle_params(params)
                 files = submitFile(file_iri)
                 response = opswat.make_rest_call('/file/sync', headers=headers, files=files)
             else:
-                other_attributes = params.get('other_attributes')
-                payload = {
-                    "Content-Type": "application/octet-stream",
-                    "apikey": opswat.token,
-                    "filename": params.get('filename'),
-                    "rule": urllib.parse.quote(params.get('rule')),
-                    "callbackurl": params.get('callback_url'),
-                    "sanitizedurl": params.get('sanitized_url')
-                }
-                payload.update(other_attributes)
-                headers = check_payload(payload)
+                headers = build_headers(params, opswat)
                 file_iri = handle_params(params)
                 files = submitFile(file_iri)
                 response = opswat.make_rest_call('/file', headers=headers, files=files)
