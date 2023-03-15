@@ -9,14 +9,14 @@
   "cs_compatible": true,
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
-  "help_online": "",
+  "help_online": "https://docs.fortinet.com/document/fortisoar/1.0.0/opswat-metadefender-core/522/opswat-metadefender-core-v1-0-0",
   "configuration": {
     "fields": [
       {
         "title": "Server URL",
         "name": "server_url",
         "type": "text",
-        "description": "URL of the OPSWAT MetaDefender Core server to which you will connect and perform the automated operations.",
+        "description": "URL of the OPSWAT MetaDefender Core server to connect and perform the automated operations. ",
         "placeholder": "Please enter the server URL",
         "required": true,
         "editable": true,
@@ -29,7 +29,7 @@
         "visible": true,
         "type": "text",
         "name": "username",
-        "description": "Username used to access the OPSWAT MetaDefender Core server to which you will connect and perform the automated operations."
+        "description": "Username used to access the OPSWAT MetaDefender Core server to connect and perform the automated operations. "
       },
       {
         "title": "Password",
@@ -38,13 +38,13 @@
         "visible": true,
         "type": "password",
         "name": "password",
-        "description": "Password used to access the OPSWAT MetaDefender Core server to which you will connect and perform the automated operations."
+        "description": "Password used to access the OPSWAT MetaDefender Core server to connect and perform the automated operations. "
       },
       {
         "title": "Verify SSL",
         "name": "verify_ssl",
         "type": "checkbox",
-        "description": "Specifies whether the SSL certificate for the server is to be verified. \nBy default, this option is set to True.",
+        "description": "Specifies whether the SSL certificate for the server is to be verified or not. \nBy default, this option is set to True. ",
         "required": false,
         "editable": true,
         "visible": true,
@@ -56,7 +56,7 @@
     {
       "operation": "submit_file",
       "title": "Submit File",
-      "description": "Submit the file to be scanned, You can specify the 'URL of File' or select file from 'Attachments'. You can also choose among 'Synchronous Mode' or 'Asynchronous Mode'. Each submission request is tracked by data id.",
+      "description": "Submits the file to be scanned. You can specify the File URL or select the file from Attachments. You can also choose among Synchronous Mode or Asynchronous Mode. Each submission request is tracked by a data id. ",
       "category": "investigation",
       "annotation": "submit_file",
       "conditional_output_schema": [
@@ -276,8 +276,8 @@
           ],
           "name": "submit_type",
           "value": "Through Attachments",
-          "tooltip": "Select the type of submission using which you want to submit the file",
-          "description": "Select the type of submission using which you want to submit the file. You can choose among the following options: 'File Download URL' or 'Through Attachments' (Default).",
+          "tooltip": "Select the submission type to submit the file.",
+          "description": "Select the submission type to submit the file.",
           "onchange": {
             "FortiSOAR File/Attachments IRI": [{
               "title": "Submission Mode",
@@ -291,8 +291,8 @@
               ],
               "name": "submit_mode",
               "value": "Synchronous Mode",
-              "tooltip": "Select one of the modes of submission using which you want to submit the file",
-              "description": "Select one of the modes of submission using which you want to submit the file. You can choose among the following options: 'Synchronous mode' (Default) or 'Asynchronous mode'.",
+              "tooltip": "Select the mode to submit the file.",
+              "description": "Select the mode to submit the file.",
               "onchange": {
                 "Synchronous Mode": [
                   {
@@ -316,14 +316,14 @@
                     "editable": true,
                     "visible": true,
                     "required": true,
-                    "description": "File Attachment/IRI Reference that is used to access the attachment metadata from the FortiSOAR™ Attachments module.\nIn the playbook, if you select 'Attachment ID', this defaults to the {{vars.attachment_id}} value or if you select 'File IRI', then this defaults to the {{vars.file_iri}} value."
+                    "description": "Specify the attachment ID or the file IRI as per the Type selected."
                   },
                   {
                     "title": "File Name",
                     "name": "filename",
                     "type": "text",
-                    "tooltip": "Specify the name of the submitted file.",
-                    "description": "(Optional) Specify the name of the submitted file. Specified name is displayed in OPSWAT MetaDefender Core UI",
+                    "tooltip":  "Specify the name of the file to be submitted.",
+                    "description": "(Optional) Specify the name of the file to be submitted.",
                     "required": false,
                     "editable": true,
                     "visible": true
@@ -332,8 +332,8 @@
                     "title": "Rule",
                     "name": "rule",
                     "type": "text",
-                    "tooltip": "Specify the rule for the analysis, if no header given the default rule will be selected.",
-                    "description": "(Optional) Specify the rule for the analysis, if no header given the default rule will be selected.",
+                    "tooltip": "Specify a rule for the analysis, if no header given the default rule is selected.",
+                    "description": "(Optional) Specify a rule for the analysis, if no header given the default rule is selected.",
                     "required": false,
                     "editable": true,
                     "visible": true
@@ -372,14 +372,14 @@
                     "visible": true,
                     "required": true,
                     "value": "",
-                    "description": "File Attachment/IRI Reference that is used to access the attachment metadata from the FortiSOAR™ Attachments module.\nIn the playbook, if you select 'Attachment ID', this defaults to the {{vars.attachment_id}} value or if you select 'File IRI', then this defaults to the {{vars.file_iri}} value."
+                    "description": "Specify the attachment ID or the file IRI as per the Type selected."
                   },
                   {
                     "title": "File Name",
                     "name": "filename",
                     "type": "text",
-                    "tooltip": "Specify the name of the submitted file.",
-                    "description": "(Optional) Specify the name of the submitted file. Specified name is displayed in OPSWAT MetaDefender Core UI",
+                    "tooltip":  "Specify the name of the file to be submitted.",
+                    "description": "(Optional) Specify the name of the file to be submitted.",
                     "required": false,
                     "editable": true,
                     "visible": true
@@ -388,8 +388,8 @@
                     "title": "Rule",
                     "name": "rule",
                     "type": "text",
-                    "tooltip": "Specify the rule for the analysis, if no header given the default rule will be selected.",
-                    "description": "(Optional) Specify the rule for the analysis, if no header given the default rule will be selected.",
+                    "tooltip": "Specify a rule for the analysis, if no header given the default rule is selected.",
+                    "description": "(Optional) Specify a rule for the analysis, if no header given the default rule is selected.",
                     "required": false,
                     "editable": true,
                     "visible": true
@@ -411,8 +411,8 @@
                     "visible": true,
                     "type": "text",
                     "name": "callback_url",
-                    "description": "Specify the Client's URL where MetaDefender Core will notify scan result back to whenever scan is finished.",
-                    "tooltip": "(Optional) Specify the Client's URL where MetaDefender Core will notify scan result back to whenever scan is finished.",
+                    "description": "(Optional) Specify the Client's URL where MetaDefender Core will notify scan result back to whenever scan is finished.",
+                    "tooltip": "Specify the Client's URL where MetaDefender Core will notify scan result back to whenever scan is finished.",
                     "placeholder": "<protocol://><ip | domain>:<port></path>"
                   },
                   {
@@ -422,8 +422,8 @@
                     "visible": true,
                     "type": "text",
                     "name": "sanitized_url",
-                    "description": "Client's URL where MetaDefender Core will send the sanitized file as the body of a POST request back to whenever scan is finished",
-                    "tooltip": "(Optional) Client's URL where MetaDefender Core will send the sanitized file as the body of a POST request back to whenever scan is finished",
+                    "description": "(Optional) Specify the Client's URL where MetaDefender Core will send the sanitized file as the body of a POST request back to whenever scan is finished",
+                    "tooltip": "Specify the Client's URL where MetaDefender Core will send the sanitized file as the body of a POST request back to whenever scan is finished",
                     "placeholder": "<protocol://><ip | domain>:<port></path>"
                   }
                 ]
@@ -441,8 +441,8 @@
               ],
               "name": "submit_mode",
               "value": "Synchronous Mode",
-              "tooltip": "Select one of the modes of submission using which you want to submit the file",
-              "description": "Select one of the modes of submission using which you want to submit the file. You can choose among the following options: 'Synchronous mode' (Default) or 'Asynchronous mode'.",
+              "tooltip": "Select the mode to submit the file.",
+              "description": "Select the mode to submit the file.",
               "onchange": {
                 "Synchronous Mode": [
                   {
@@ -452,16 +452,16 @@
                     "visible": true,
                     "type": "text",
                     "name": "download_from",
-                    "description": "Specify the path from which you want to retrieve the file for submission.",
-                    "tooltip": "Specify the path from which you want to retrieve the file for submission.",
+                    "description": "Specify the file download path to download the file.",
+                    "tooltip": "Specify the file download path to download the file.",
                     "placeholder": "<protocol://><ip | domain>:<port></path>"
                   },
                   {
                     "title": "File Name",
                     "name": "filename",
                     "type": "text",
-                    "tooltip": "Specify the name of the submitted file.",
-                    "description": "(Optional) Specify the name of the submitted file. Specified name is displayed in OPSWAT MetaDefender Core UI",
+                    "tooltip":  "Specify the name of the file to be submitted.",
+                    "description": "(Optional) Specify the name of the file to be submitted.",
                     "required": false,
                     "editable": true,
                     "visible": true
@@ -470,8 +470,8 @@
                     "title": "Rule",
                     "name": "rule",
                     "type": "text",
-                    "tooltip": "Specify the rule for the analysis, if no header given the default rule will be selected.",
-                    "description": "(Optional) Specify the rule for the analysis, if no header given the default rule will be selected.",
+                    "tooltip": "Specify a rule for the analysis, if no header given the default rule is selected.",
+                    "description": "(Optional) Specify a rule for the analysis, if no header given the default rule is selected.",
                     "required": false,
                     "editable": true,
                     "visible": true
@@ -495,16 +495,16 @@
                     "visible": true,
                     "type": "text",
                     "name": "download_from",
-                    "description": "Specify the path from which you want to retrieve the file for submission.",
-                    "tooltip": "Specify the path from which you want to retrieve the file for submission.",
+                    "description": "Specify the file download path to download the file.",
+                    "tooltip": "Specify the file download path to download the file.",
                     "placeholder": "<protocol://><ip | domain>:<port></path>"
                   },
                   {
                     "title": "File Name",
                     "name": "filename",
                     "type": "text",
-                    "tooltip": "Specify the name of the submitted file.",
-                    "description": "(Optional) Specify the name of the submitted file. Specified name is displayed in OPSWAT MetaDefender Core UI",
+                    "tooltip":  "Specify the name of the file to be submitted.",
+                    "description": "(Optional) Specify the name of the file to be submitted.",
                     "required": false,
                     "editable": true,
                     "visible": true
@@ -513,8 +513,8 @@
                     "title": "Rule",
                     "name": "rule",
                     "type": "text",
-                    "tooltip": "Specify the rule for the analysis, if no header given the default rule will be selected.",
-                    "description": "(Optional) Specify the rule for the analysis, if no header given the default rule will be selected.",
+                    "tooltip": "Specify a rule for the analysis, if no header given the default rule is selected.",
+                    "description": "(Optional) Specify a rule for the analysis, if no header given the default rule is selected.",
                     "required": false,
                     "editable": true,
                     "visible": true
@@ -536,8 +536,8 @@
                     "visible": true,
                     "type": "text",
                     "name": "callback_url",
-                    "description": "Specify the Client's URL where MetaDefender Core will notify scan result back to whenever scan is finished.",
-                    "tooltip": "(Optional) Specify the Client's URL where MetaDefender Core will notify scan result back to whenever scan is finished.",
+                    "description": "(Optional) Specify the Client's URL where MetaDefender Core will notify scan result back to whenever scan is finished.",
+                    "tooltip": "Specify the Client's URL where MetaDefender Core will notify scan result back to whenever scan is finished.",
                     "placeholder": "<protocol://><ip | domain>:<port></path>"
                   },
                   {
@@ -547,8 +547,8 @@
                     "visible": true,
                     "type": "text",
                     "name": "sanitized_url",
-                    "description": "Client's URL where MetaDefender Core will send the sanitized file as the body of a POST request back to whenever scan is finished",
-                    "tooltip": "(Optional) Client's URL where MetaDefender Core will send the sanitized file as the body of a POST request back to whenever scan is finished",
+                    "description": "(Optional) Specify the Client's URL where MetaDefender Core will send the sanitized file as the body of a POST request back to whenever scan is finished",
+                    "tooltip": "Specify the Client's URL where MetaDefender Core will send the sanitized file as the body of a POST request back to whenever scan is finished",
                     "placeholder": "<protocol://><ip | domain>:<port></path>"
                   }
                 ]
@@ -561,7 +561,7 @@
     {
       "operation": "get_hashcode_reputation",
       "title": "Get Hashcode Reputation",
-      "description": "Retrieves analysis result by hashcode from the OPSWAT MetaDefender Core.",
+      "description": "Retrieves analysis result by hashcode from the OPSWAT MetaDefender Core. ",
       "category": "investigation",
       "annotation": "get_hashcode_reputation",
       "output_schema": {
@@ -785,7 +785,7 @@
     {
       "operation": "download_sanitized_files",
       "title": "Download Sanitized Files",
-      "description": "Retrieves sanitized file based on the Data ID from OPSWAT MetaDefender Core.",
+      "description": "Retrieves sanitized file based on the data ID from OPSWAT MetaDefender Core. ",
       "category": "investigation",
       "annotation": "download_sanitized_files",
       "output_schema": {
@@ -859,8 +859,8 @@
           "title": "Data ID",
           "name": "data_id",
           "type": "text",
-          "tooltip": "The data ID you get from 'Submit File' action.",
-          "description": "The data ID you get from 'Submit File' action.",
+          "tooltip": "Specify the data ID you get from Submit File action. ",
+          "description": "Specify the data ID you get from Submit File action. ",
           "required": true,
           "editable": true,
           "visible": true

@@ -2,7 +2,7 @@
   "type": "workflow_collections",
   "data": [
     {
-      "uuid": "0c331c46-fe5f-49cc-8fa4-b4fdbdd6603a",
+      "uuid": "7b2e35d2-8f23-451d-b39e-086f1b880c4d",
       "@type": "WorkflowCollection",
       "name": "Sample - OPSWAT MetaDefender Core - 1.0.0",
       "description": "OPSWAT MetaDefender Core prevents malicious file uploads on web applications that bypass sandboxes and other detection-based security solutions. This connector facilitates operations to Submit File, Get Hashcode Reputation, Download Sanitized Files.",
@@ -15,10 +15,10 @@
       "workflows": [
         {
           "@type": "Workflow",
-          "uuid": "b1d731dc-e062-46c6-856b-78ae477d9f3c",
-          "collection": "/api/3/workflow_collections/0c331c46-fe5f-49cc-8fa4-b4fdbdd6603a",
+          "uuid": "b0d42a98-d39e-4e4d-bb54-30defe4cb544",
+          "collection": "/api/3/workflow_collections/7b2e35d2-8f23-451d-b39e-086f1b880c4d",
           "triggerLimit": null,
-          "description": "Submit the file to be scanned, You can specify the 'URL of File' or select file from 'Attachments'. You can also choose among 'Synchronous Mode' or 'Asynchronous Mode'. Each submission request is tracked by data id.",
+          "description": "Submits the file to be scanned. You can specify the File URL or select the file from Attachments. You can also choose among Synchronous Mode or Asynchronous Mode. Each submission request is tracked by a data id. ",
           "name": "Submit File",
           "tag": "#OPSWAT MetaDefender Core",
           "recordTags": [
@@ -30,16 +30,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/8d5b184a-4a42-4067-9e3d-6f7490d8bed2",
+          "triggerStep": "/api/3/workflow_steps/e6c1746a-2cd5-4754-868f-592c66228c9a",
           "steps": [
             {
-              "uuid": "8d5b184a-4a42-4067-9e3d-6f7490d8bed2",
+              "uuid": "e6c1746a-2cd5-4754-868f-592c66228c9a",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "d09daccf-69b8-426b-8ef5-99d6bdfdf75a",
+                "route": "0d7c1a31-ff72-4951-b199-727d94e05152",
                 "title": "OPSWAT MetaDefender Core: Submit File",
                 "resources": [
                   "alerts"
@@ -59,7 +59,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "7a5132cf-c182-4a01-8863-d9df9e2b8f53",
+              "uuid": "cdb019f7-b236-4c23-a9ad-c3d5c677f040",
               "@type": "WorkflowStep",
               "name": "Submit File",
               "description": null,
@@ -83,21 +83,21 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "dd5051b2-dc04-4c14-a6f9-2cc57e6e5bb2",
+              "uuid": "d5034723-65b0-4bce-b9ee-48870326f556",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Submit File",
-              "sourceStep": "/api/3/workflow_steps/8d5b184a-4a42-4067-9e3d-6f7490d8bed2",
-              "targetStep": "/api/3/workflow_steps/7a5132cf-c182-4a01-8863-d9df9e2b8f53"
+              "sourceStep": "/api/3/workflow_steps/e6c1746a-2cd5-4754-868f-592c66228c9a",
+              "targetStep": "/api/3/workflow_steps/cdb019f7-b236-4c23-a9ad-c3d5c677f040"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "d6240e99-0a5f-4493-b5cd-1d06d2c0f47b",
-          "collection": "/api/3/workflow_collections/0c331c46-fe5f-49cc-8fa4-b4fdbdd6603a",
+          "uuid": "07b7fd32-98c3-4311-9ea3-83fa4e39ef6d",
+          "collection": "/api/3/workflow_collections/7b2e35d2-8f23-451d-b39e-086f1b880c4d",
           "triggerLimit": null,
-          "description": "Retrieves analysis result by hashcode from the OPSWAT MetaDefender Core.",
+          "description": "Retrieves analysis result by hashcode from the OPSWAT MetaDefender Core. ",
           "name": "Get Hashcode Reputation",
           "tag": "#OPSWAT MetaDefender Core",
           "recordTags": [
@@ -109,16 +109,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/82ad496c-b4ae-4241-92ad-a638d033bc84",
+          "triggerStep": "/api/3/workflow_steps/c4192875-bce2-46e6-9a3d-846a88734f29",
           "steps": [
             {
-              "uuid": "82ad496c-b4ae-4241-92ad-a638d033bc84",
+              "uuid": "c4192875-bce2-46e6-9a3d-846a88734f29",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "d066d8a0-e6ea-4447-8ef0-0110c96f8d18",
+                "route": "f2a3fdca-430b-45cd-9496-374f41a9b071",
                 "title": "OPSWAT MetaDefender Core: Get Hashcode Reputation",
                 "resources": [
                   "alerts"
@@ -138,7 +138,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "cdc7137b-5a69-4634-be1e-4fda6cedc3d8",
+              "uuid": "013fd65d-bfa8-4572-8b85-5c5f1aa641e3",
               "@type": "WorkflowStep",
               "name": "Get Hashcode Reputation",
               "description": null,
@@ -160,21 +160,21 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "0392e7b7-0602-4454-8ef7-0620ab12a4cd",
+              "uuid": "334c07f3-595d-4b29-b439-88108e2edb32",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get Hashcode Reputation",
-              "sourceStep": "/api/3/workflow_steps/82ad496c-b4ae-4241-92ad-a638d033bc84",
-              "targetStep": "/api/3/workflow_steps/cdc7137b-5a69-4634-be1e-4fda6cedc3d8"
+              "sourceStep": "/api/3/workflow_steps/c4192875-bce2-46e6-9a3d-846a88734f29",
+              "targetStep": "/api/3/workflow_steps/013fd65d-bfa8-4572-8b85-5c5f1aa641e3"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "1af7ffff-d5d3-4110-8d8c-bfc123e4272f",
-          "collection": "/api/3/workflow_collections/0c331c46-fe5f-49cc-8fa4-b4fdbdd6603a",
+          "uuid": "c4368c14-440f-4146-8f13-50073cd9c0e6",
+          "collection": "/api/3/workflow_collections/7b2e35d2-8f23-451d-b39e-086f1b880c4d",
           "triggerLimit": null,
-          "description": "Retrieves sanitized file based on the Data ID from OPSWAT MetaDefender Core.",
+          "description": "Retrieves sanitized file based on the data ID from OPSWAT MetaDefender Core. ",
           "name": "Download Sanitized Files",
           "tag": "#OPSWAT MetaDefender Core",
           "recordTags": [
@@ -186,16 +186,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/ab5ed0d7-b753-4315-b18a-b8defaa0e961",
+          "triggerStep": "/api/3/workflow_steps/2220363f-290c-41e2-ab5c-6f10812eea24",
           "steps": [
             {
-              "uuid": "ab5ed0d7-b753-4315-b18a-b8defaa0e961",
+              "uuid": "2220363f-290c-41e2-ab5c-6f10812eea24",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "a83a5623-e881-4623-b79c-d5df7dd2cc92",
+                "route": "4b5984a4-92ce-46b3-ad4f-6dd1c5e48d7e",
                 "title": "OPSWAT MetaDefender Core: Download Sanitized Files",
                 "resources": [
                   "alerts"
@@ -215,7 +215,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "6cc82629-8345-4f4c-963e-700c837a1c40",
+              "uuid": "d343e4e0-e87d-4ea9-b35d-6ff30a41f66a",
               "@type": "WorkflowStep",
               "name": "Download Sanitized Files",
               "description": null,
@@ -237,12 +237,12 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "1c979f2c-9568-4481-aa59-0763e195a1f8",
+              "uuid": "67450dae-f387-43c7-9019-86ba4722c0f8",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Download Sanitized Files",
-              "sourceStep": "/api/3/workflow_steps/ab5ed0d7-b753-4315-b18a-b8defaa0e961",
-              "targetStep": "/api/3/workflow_steps/6cc82629-8345-4f4c-963e-700c837a1c40"
+              "sourceStep": "/api/3/workflow_steps/2220363f-290c-41e2-ab5c-6f10812eea24",
+              "targetStep": "/api/3/workflow_steps/d343e4e0-e87d-4ea9-b35d-6ff30a41f66a"
             }
           ]
         }
